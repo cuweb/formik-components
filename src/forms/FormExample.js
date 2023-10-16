@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from '../components/FormikControl/FormikControl'
+import FieldWrapper from '../components/FieldWrapper/FieldWrapper'
 
 function FormExample() {
   const dropdownOptions = [
@@ -53,13 +54,23 @@ function FormExample() {
     >
       {formik => (
         <Form>
-          <FormikControl
-            control='input'
-            type="text"
-            label='Name'
-            name='name'
-            placeholder="Enter your name"
-          />
+          <FieldWrapper cols={2}>
+            <FormikControl
+              control='input'
+              type="text"
+              label='Name'
+              name='name'
+              placeholder="Enter your name"
+            />
+            <FormikControl
+              control='input'
+              type="text"
+              label='Name'
+              name='name'
+              placeholder="Enter your name"
+            />
+          </FieldWrapper>
+
           <FormikControl
             control='input'
             type="email"
@@ -67,6 +78,7 @@ function FormExample() {
             name='email'
             placeholder="Enter a valid email"
           />
+
           <FormikControl
             control='textarea'
             label='Description'
@@ -74,29 +86,39 @@ function FormExample() {
             rows="5"
             placeholder="Please describe"
           />
+
           <FormikControl
             control='select'
             label='Select a topic'
             name='selectOption'
             options={dropdownOptions}
           />
-          <FormikControl
-            control='radio'
-            label='Radio topic'
-            name='radioOption'
-            options={radioOptions}
-          />
-          <FormikControl
-            control='checkbox'
-            label='Checkbox topic'
-            name='checkboxOption'
-            options={checkboxOptions}
-          />
-          <FormikControl
-            control='date'
-            label='Pick a date'
-            name='birthDate'
-          />
+
+          <FieldWrapper>
+            <FormikControl
+              control='radio'
+              label='Radio topic'
+              name='radioOption'
+              options={radioOptions}
+            />
+          </FieldWrapper>
+
+          <FieldWrapper>
+            <FormikControl
+              control='checkbox'
+              label='Checkbox topic'
+              name='checkboxOption'
+              options={checkboxOptions}
+            />
+          </FieldWrapper>
+
+          <FieldWrapper>
+            <FormikControl
+              control='date'
+              label='Pick a date'
+              name='birthDate'
+            />
+          </FieldWrapper>
           
           <button
             type="submit"
