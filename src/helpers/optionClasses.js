@@ -1,8 +1,12 @@
-export const maxWidthClass = {
-  'sm': 'max-w-xs',
-  'md': 'max-w-xl',
-  'lg': 'max-w-4xl',
-  'xl': 'max-w-7xl',
+// Function to determine the maxWidth class
+export function getMaxWidthClass(maxWidth) {
+  const maxWidthClasses = {
+    sm: 'max-w-xs',
+    md: 'max-w-xl',
+    lg: 'max-w-4xl',
+    xl: 'max-w-7xl',
+  };
+  return maxWidthClasses[maxWidth] || '';
 }
 
 export const gridColsClass = {

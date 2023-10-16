@@ -77,6 +77,7 @@ function FormExample() {
             label='Email'
             name='email'
             placeholder="Enter a valid email"
+            maxWidth='lg'
           />
 
           <FormikControl
@@ -85,6 +86,7 @@ function FormExample() {
             name='description'
             rows="5"
             placeholder="Please describe"
+            maxWidth='md'
           />
 
           <FormikControl
