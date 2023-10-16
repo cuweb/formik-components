@@ -58,15 +58,15 @@ function FormExample() {
             <FormikControl
               control='input'
               type="text"
-              label='Name'
-              name='name'
+              label='First Name'
+              name='firstname'
               placeholder="Enter your name"
             />
             <FormikControl
               control='input'
               type="text"
-              label='Name'
-              name='name'
+              label='Last Name'
+              name='lastname'
               placeholder="Enter your name"
             />
           </FieldWrapper>
