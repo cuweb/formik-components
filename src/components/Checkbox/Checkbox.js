@@ -1,15 +1,24 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from '../TextError/TextError'
-import { primaryStyles, labelStyles, fieldStyles } from '../../styles/styles'
+import { primaryStyles, textStyles, fieldStyles } from '../../styles/styles'
 
 function Checkbox(props) {
-  const { label, name, options, isInline, ...rest } = props
-  const displayInline = isInline ? 'flex flex-row gap-10' : 'flex flex-col gap-2'
+  const { label, name, options, isInline, helper, required, ...rest } = props
+  const requiredClass = required ? primaryStyles.required : ''
+  const displayInline = isInline ? fieldStyles.horizontalOptions : fieldStyles.verticalOptions
 
   return (
-    <div className={`${primaryStyles.wrapper} form-control`}>
-      <label htmlFor={name} className={labelStyles.label}>{label}</label>
+    <div className={`${primaryStyles.wrapper} ${requiredClass} form-control`}>
+      <label
+        htmlFor={name}
+        className={textStyles.label}
+      >
+        {label} {required && <span className={textStyles.required}>*</span>}
+      </label>
+
+      {helper && <div className={textStyles.helper}>{helper}</div>}
+
       <fieldset className={displayInline}>
         <Field name={name} {...rest}>
           {({ field }) => {
@@ -30,6 +39,7 @@ function Checkbox(props) {
           }}
         </Field>
       </fieldset>
+
       <ErrorMessage name={name} component={TextError} />
     </div>
   )

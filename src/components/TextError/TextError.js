@@ -2,7 +2,7 @@ import React from 'react'
 
 function TextError(props) {
   return (
-    <div className="error">
+    <div className="font-semibold error text-cu-red">
       {props.children}
     </div>
   )

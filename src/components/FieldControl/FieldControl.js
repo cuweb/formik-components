@@ -6,7 +6,7 @@ import Radio from '../Radio/Radio';
 import Checkbox from '../Checkbox/Checkbox';
 import DatePicker from '../DatePicker/DatePicker';
 
-function FormikControl(props) {
+function FieldControl(props) {
   const { control, ...rest } = props;
   
   switch(control) {
@@ -26,4 +26,4 @@ function FormikControl(props) {
   }
 }
 
-export default FormikControl
+export default FieldControl

@@ -3,13 +3,23 @@ import { Field, ErrorMessage } from 'formik'
 import TextError from '../TextError/TextError'
 import DateView from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { primaryStyles, labelStyles, fieldStyles } from '../../styles/styles'
+import { primaryStyles, textStyles, fieldStyles } from '../../styles/styles'
 
 function DatePicker(props) {
-  const { label, name,...rest } = props;
+  const { label, name, helper, required, ...rest } = props;
+  const requiredClass = required ? primaryStyles.required : ''
+
   return (
-    <div className={`${primaryStyles.wrapper} form-control`}>
-      <label htmlFor={name} className={labelStyles.label}>{label}</label>
+    <div className={`${primaryStyles.wrapper} ${requiredClass} form-control`}>
+      <label
+        htmlFor={name}
+        className={textStyles.label}
+      >
+        {label} {required && <span className={textStyles.required}>*</span>}
+      </label>
+
+      {helper && <div className={textStyles.helper}>{helper}</div>}
+
       <Field name={name}>
         {({ form, field }) => {
           const { setFieldValue } = form
@@ -27,6 +37,7 @@ function DatePicker(props) {
           )
         }}
       </Field>
+
       <ErrorMessage name={name} component={TextError} />
     </div>
   )

@@ -5,6 +5,6 @@
 /* Add 24px of spacing between elements in a form */
 form > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem /* 24px */ * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem /* 24px */ * var(--tw-space-y-reverse));
+  margin-top: calc(2.25rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.25rem * var(--tw-space-y-reverse));
 }
