@@ -1,13 +1,14 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from '../TextError/TextError'
+import { primaryStyles, labelStyles } from '../../styles/styles'
 
 function Radio(props) {
   const { label, name, options, ...rest } = props
 
   return (
-    <div className="form-control">
-      <label htmlFor={name}>{label}</label>
+    <div className={`${primaryStyles.wrapper} form-control`}>
+      <label htmlFor={name} className={labelStyles.label}>{label}</label>
       <Field name={name} {...rest}>
         {({ field }) => {
           return options.map(option => {

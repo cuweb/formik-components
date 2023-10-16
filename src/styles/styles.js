@@ -1,4 +1,4 @@
-export const wrapperStyles = {
+export const primaryStyles = {
   wrapper: `flex flex-col gap-2`
 }
 

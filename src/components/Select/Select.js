@@ -1,14 +1,15 @@
 import React from 'react'
 import { Field, ErrorMessage } from 'formik'
 import TextError from '../TextError/TextError'
+import { primaryStyles, labelStyles, fieldStyles } from '../../styles/styles'
 
 function Select(props) {
   const { label, name, options, ...rest } = props
 
   return (
-    <div className="form-control">
-      <label htmlFor={name}>{label}</label>
-      <Field as='select' id={name} name={name} {...rest}>
+    <div className={`${primaryStyles.wrapper} form-control`}>
+      <label htmlFor={name} className={labelStyles.label}>{label}</label>
+      <Field as='select' id={name} name={name} className={fieldStyles.input} {...rest}>
         {options.map(option => {
           return(
             <option key={option.value} value={option.value}>{option.key}</option>
