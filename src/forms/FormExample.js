@@ -25,7 +25,8 @@ function FormExample() {
   ]
   
   const initialValues = {
-    name: '',
+    firstname: '',
+    lastname: '',
     email: '',
     description: '',
     selectOption: '',
@@ -35,7 +36,8 @@ function FormExample() {
   }
 
   const validationSchema = Yup.object({
-    name: Yup.string().required('Required'),
+    firstname: Yup.string().required('Required'),
+    lastname: Yup.string().required('Required'),
     email: Yup.string().required('Required').email("Invalid email address"),
     description: Yup.string().required('Required'),
     selectOption: Yup.string().required('Required'),
@@ -54,7 +56,7 @@ function FormExample() {
     >
       {formik => (
         <Form>
-          <FieldWrapper cols={2}>
+          <FieldWrapper cols={1}>
             <FormikControl
               control='input'
               type="text"
@@ -77,7 +79,7 @@ function FormExample() {
             label='Email'
             name='email'
             placeholder="Enter a valid email"
-            maxWidth='lg'
+            maxWidth='2xl'
           />
 
           <FormikControl
@@ -96,7 +98,13 @@ function FormExample() {
             options={dropdownOptions}
           />
 
-          <FieldWrapper>
+          <FieldWrapper cols={3}>
+            <FormikControl
+              control='radio'
+              label='Radio topic'
+              name='radioOption'
+              options={radioOptions}
+            />
             <FormikControl
               control='radio'
               label='Radio topic'
@@ -105,7 +113,21 @@ function FormExample() {
             />
           </FieldWrapper>
 
-          <FieldWrapper>
+          <FormikControl
+            control='radio'
+            label='Radio topic'
+            name='radioOption'
+            options={radioOptions}
+            isInline
+          />
+
+          <FieldWrapper cols={3}>
+            <FormikControl
+              control='checkbox'
+              label='Checkbox topic'
+              name='checkboxOption'
+              options={checkboxOptions}
+            />
             <FormikControl
               control='checkbox'
               label='Checkbox topic'
@@ -114,13 +136,19 @@ function FormExample() {
             />
           </FieldWrapper>
 
-          <FieldWrapper>
-            <FormikControl
-              control='date'
-              label='Pick a date'
-              name='birthDate'
-            />
-          </FieldWrapper>
+          <FormikControl
+            control='checkbox'
+            label='Checkbox topic'
+            name='checkboxOption'
+            options={checkboxOptions}
+            isInline
+          />
+
+          <FormikControl
+            control='date'
+            label='Pick a date'
+            name='birthDate'
+          />
           
           <button
             type="submit"
