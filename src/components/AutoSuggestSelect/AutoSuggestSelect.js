@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, ErrorMessage, useField, useFormikContext } from "formik";
+import { Field, ErrorMessage } from "formik";
 import Select from "react-select";
 import { primaryStyles, textStyles, fieldStyles } from "../../styles/styles";
 import { getMaxWidthClass } from "../../helpers/optionClasses";
@@ -9,15 +9,6 @@ const AutoSuggestSelect = (props) => {
   const { label, name, options, maxWidth, helper, required, ...rest } = props;
   const fieldMaxWidth = getMaxWidthClass(maxWidth);
   const requiredClass = required ? primaryStyles.required : "";
-
-  const [field, form, helpers] = useField(props);
-  const { setValue, setTouched, setError } = helpers;
-
-  const setFieldProps = (selectedOption) => {
-    setValue(selectedOption.value);
-    setTouched(true);
-    setError(undefined);
-  };
 
   return (
     <>
@@ -29,22 +20,23 @@ const AutoSuggestSelect = (props) => {
         </label>
 
         {helper && <div className={textStyles.helper}>{helper}</div>}
-        <div className="mt-2">
-          <Select
-            name={name}
-            instanceId="select-box"
-            value={
-              options
-                ? options.find((option) => option.value === field.value)
-                : ""
-            }
-            onChange={(selectedOption) => setFieldProps(selectedOption)}
-            options={options}
-            className={fieldStyles.input}
-            {...rest}
-          />
-          <ErrorMessage name={name} component={TextError} />
-        </div>
+        <Field name={name} {...rest}>
+          {({ field, form }) => (
+            <Select
+              {...field}
+              {...rest}
+              options={options}
+              onChange={(selectedOption) =>
+                form.setFieldValue(field.name, selectedOption)
+              }
+              onBlur={() => form.setFieldTouched(field.name, true)}
+              isSearchable={true}
+              isClearable={true}
+              className={fieldStyles.input}
+            />
+          )}
+        </Field>
+        <ErrorMessage name={name} component={TextError} />
       </div>
     </>
   );

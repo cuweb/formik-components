@@ -24,6 +24,11 @@ function FormExample() {
     { key: "Option 2", value: "cOption2" },
     { key: "Option 3", value: "cOption3" },
   ];
+  const selectCountry = [
+    { value: "usa", label: "USA" },
+    { value: "canada", label: "Canada" },
+    { value: "australia", label: "Australia" },
+  ];
 
   const initialValues = {
     firstname: "",
@@ -36,11 +41,6 @@ function FormExample() {
     birthDate: null,
     autoSuggestCountry: "",
   };
-  const selectCountry = [
-    { value: "usa", label: "USA" },
-    { value: "canada", label: "Canada" },
-    { value: "australia", label: "Australia" },
-  ];
 
   const validationSchema = Yup.object({
     firstname: Yup.string().required("Required"),
@@ -51,7 +51,12 @@ function FormExample() {
     radioOption: Yup.string().required("Required"),
     checkboxOption: Yup.array().required("Required"),
     birthDate: Yup.date().required("Required").nullable(),
-    autoSuggestCountry: Yup.string(),
+    autoSuggestCountry: Yup.object()
+      .shape({
+        value: Yup.string(),
+        label: Yup.string(),
+      })
+      .required("Required"),
   });
 
   const onSubmit = (values) => console.log("Form data", values);
@@ -107,15 +112,27 @@ function FormExample() {
               maxWidth="md"
               required
             />
-
-            <FieldControl
-              control="select"
-              label="Select a topic"
-              name="selectOption"
-              options={dropdownOptions}
-              helper="Please select a topic of your choosing"
-              required
-            />
+            <FieldWrapper cols={2}>
+              <FieldControl
+                control="select"
+                label="Select a topic"
+                name="selectOption"
+                options={dropdownOptions}
+                helper="Please select a topic of your choosing"
+                required
+                maxWidth="md"
+              />
+              <FieldControl
+                control="autoSuggestSelect"
+                label="Auto select option"
+                name="autoSuggestCountry"
+                options={selectCountry}
+                helper="Please select a country of your choosing"
+                required
+                maxWidth="md"
+                placeholder="select a country ...."
+              />
+            </FieldWrapper>
 
             <FieldWrapper cols={3}>
               <FieldControl
@@ -181,13 +198,6 @@ function FormExample() {
               name="birthDate"
               helper="Please specify your DOB"
               required
-            />
-            <AutoSuggestSelect
-              name={"autoSuggestCountry"}
-              options={selectCountry}
-              label="auto select Option"
-              placeholder="select a country ...."
-              maxWidth="sm"
             />
 
             {/* <button
