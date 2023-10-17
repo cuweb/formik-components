@@ -3,6 +3,8 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FieldControl from '../components/FieldControl/FieldControl'
 import FieldWrapper from '../components/FieldWrapper/FieldWrapper'
+import ImageUpload from '../components/ImageUpload/ImageUpload'
+import FileUpload from '../components/FileUpload/FileUpload'
 
 function FormExample() {
   const dropdownOptions = [
@@ -49,6 +51,7 @@ function FormExample() {
   const onSubmit = values => console.log('Form data', values)
 
   return (
+    <>
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -64,8 +67,7 @@ function FormExample() {
               name='firstname'
               placeholder="Enter your name"
               helper="Enter your first name"
-              required
-            />
+              required />
             <FieldControl
               control='input'
               type="text"
@@ -73,8 +75,7 @@ function FormExample() {
               name='lastname'
               placeholder="Enter your name"
               helper="Enter your last name"
-              required
-            />
+              required />
           </FieldWrapper>
 
           <FieldControl
@@ -85,8 +86,7 @@ function FormExample() {
             placeholder="Enter a valid email"
             helper="Enter a valid email"
             maxWidth='2xl'
-            required
-          />
+            required />
 
           <FieldControl
             control='textarea'
@@ -96,8 +96,7 @@ function FormExample() {
             placeholder="Please describe"
             helper="Enter a description"
             maxWidth='md'
-            required
-          />
+            required />
 
           <FieldControl
             control='select'
@@ -105,8 +104,7 @@ function FormExample() {
             name='selectOption'
             options={dropdownOptions}
             helper="Please select a topic of your choosing"
-            required
-          />
+            required />
 
           <FieldWrapper cols={3}>
             <FieldControl
@@ -115,16 +113,14 @@ function FormExample() {
               name='radioOption'
               options={radioOptions}
               helper="Please select a thing"
-              required
-            />
+              required />
             <FieldControl
               control='radio'
               label='Radio topic'
               name='radioOption'
               options={radioOptions}
               helper="Please select a thing"
-              required
-            />
+              required />
           </FieldWrapper>
 
           <FieldControl
@@ -134,8 +130,7 @@ function FormExample() {
             options={radioOptions}
             helper="Please select a thing"
             isInline
-            required
-          />
+            required />
 
           <FieldWrapper cols={3}>
             <FieldControl
@@ -144,16 +139,14 @@ function FormExample() {
               name='checkboxOption'
               options={checkboxOptions}
               helper="Please select a thing"
-              required
-            />
+              required />
             <FieldControl
               control='checkbox'
               label='Checkbox topic'
               name='checkboxOption'
               options={checkboxOptions}
               helper="Please select a thing"
-              required
-            />
+              required />
           </FieldWrapper>
 
           <FieldControl
@@ -163,27 +156,30 @@ function FormExample() {
             options={checkboxOptions}
             helper="Please select a thing"
             isInline
-            required
-          />
+            required />
 
           <FieldControl
             control='date'
             label='Pick a date'
             name='birthDate'
             helper="Please specify your DOB"
-            required
-          />
+            required />
 
           {/* <button
-            type="submit"
-            aria-label="Submit"
-            className="inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium text-white rounded-md cu-button not-prose md:px-6 md:py-3 md:text-base hover:text-white focus:outline-none bg-cu-red hover:bg-cu-black-600"
-          >
-            Submit
-          </button> */}
+              type="submit"
+              aria-label="Submit"
+              className="inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium text-white rounded-md cu-button not-prose md:px-6 md:py-3 md:text-base hover:text-white focus:outline-none bg-cu-red hover:bg-cu-black-600"
+            >
+              Submit
+            </button> */}
         </Form>
       )}
     </Formik>
+    <h2 className="text-2xl font-bold mb-4">Image Upload</h2>
+    <ImageUpload />
+    <h2 className="text-2xl font-bold mb-4">File Upload</h2>
+    <FileUpload />
+  </>
   )
 }
 
