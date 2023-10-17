@@ -3,7 +3,6 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FieldControl from "../components/FieldControl/FieldControl";
 import FieldWrapper from "../components/FieldWrapper/FieldWrapper";
-import AutoSuggestSelect from "../components/AutoSuggestSelect/AutoSuggestSelect";
 
 function FormExample() {
   const dropdownOptions = [
