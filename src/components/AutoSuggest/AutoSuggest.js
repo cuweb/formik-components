@@ -28,7 +28,7 @@ const AutoSuggest = (props) => {
         onBlur={field.onBlur}
         isSearchable={true}
         isClearable={true}
-        className="[&>div]:border [&>div]:border-cu-black-200 [&>div]:rounded-md [&>div]:placeholder:text-cu-black-400 [&>div]:pr-0.5 [&>div]:py-0.5 [&>div]:pl-1.5 [&>*]:focus:ring-0"
+        className="[&>div]:border [&>div]:border-cu-black-200 [&>div]:rounded-md [&>div]:placeholder:text-cu-black-400 [&>div]:pr-0.5 [&>div]:py-0.5 [&>div]:pl-1.5"
       />
 
       <ErrorMessage name={name} component={TextError} />
