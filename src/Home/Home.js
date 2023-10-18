@@ -7,10 +7,7 @@ function Home() {
     <Page>
       <div>
         <h1>Welcome to the RDS Forms project </h1>
-        <p>
-          This is the introduction to my React application. You can add your
-          content here.
-        </p>
+        <p>need to add more content and link to the various forms.</p>
       </div>
     </Page>
   );

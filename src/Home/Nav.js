@@ -7,13 +7,12 @@ function Nav() {
   const [activePage, setActivePage] = useState("home");
   const location = useLocation();
 
-  console.log(activePage);
-
   React.useEffect(() => {
     const path = location.pathname;
     if (path === "/") setActivePage("home");
     else if (path === "/formExample") setActivePage("formExample");
     else if (path === "/jobForm") setActivePage("jobForm");
+    else if (path === "/jobAction") setActivePage("jobAction");
   }, [location.pathname]);
 
   return (
@@ -33,6 +32,11 @@ function Nav() {
           className={`mx-2 ${activePage === "jobForm" ? "text-red-500" : ""}`}
         >
           <Link to="/jobForm">Job Forms</Link>
+        </li>
+        <li
+          className={`mx-2 ${activePage === "jobAction" ? "text-red-500" : ""}`}
+        >
+          <Link to="/jobAction">Job Action</Link>
         </li>
       </ul>
     </nav>
