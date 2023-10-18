@@ -4,6 +4,8 @@ import JobForm from "./forms/JobForm";
 import Home from "./Home/Home";
 import Nav from "./Home/Nav";
 import JobAction from "./forms/JobAction";
+import EmployeeApproval from "./forms/EmployeeApproval";
+import PayrollServices from "./forms/PayrollServices";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/jobForm" element={<JobForm />} />
         <Route path="/formExample" element={<FormExample />} />
         <Route path="/jobAction" element={<JobAction />} />
+        <Route path="/employeeApproval" element={<EmployeeApproval />} />
+        <Route path="/payrollServices" element={<PayrollServices />} />
       </Routes>
     </Router>
   );

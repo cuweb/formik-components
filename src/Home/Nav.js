@@ -13,6 +13,8 @@ function Nav() {
     else if (path === "/formExample") setActivePage("formExample");
     else if (path === "/jobForm") setActivePage("jobForm");
     else if (path === "/jobAction") setActivePage("jobAction");
+    else if (path === "/employeeApproval") setActivePage("employeeApproval");
+    else if (path === "/payrollServices") setActivePage("payrollServices");
   }, [location.pathname]);
 
   return (
@@ -37,6 +39,20 @@ function Nav() {
           className={`mx-2 ${activePage === "jobAction" ? "text-red-500" : ""}`}
         >
           <Link to="/jobAction">Job Action</Link>
+        </li>
+        <li
+          className={`mx-2 ${
+            activePage === "employeeApproval" ? "text-red-500" : ""
+          }`}
+        >
+          <Link to="/employeeApproval">Employee Approval</Link>
+        </li>
+        <li
+          className={`mx-2 ${
+            activePage === "employeeApproval" ? "text-red-500" : ""
+          }`}
+        >
+          <Link to="/payrollServices">Payroll Services</Link>
         </li>
       </ul>
     </nav>
