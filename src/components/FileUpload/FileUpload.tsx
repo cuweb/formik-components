@@ -71,7 +71,7 @@ const FileUpload = () => {
         )}
       </div>
 
-      <button type="submit">Submit</button>
+      <button type="submit">Submit File Upload</button>
     </form>
   );
 };
