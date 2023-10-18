@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import FieldControl from "../components/FieldControl/FieldControl";
 import FieldWrapper from "../components/FieldWrapper/FieldWrapper";
 import FormButton from "../components/FormButton/FormButton";
+import Page from "../Home/Page";
 
 function FormExample() {
   const dropdownOptions = [
@@ -62,7 +63,7 @@ function FormExample() {
   const onSubmit = (values) => console.log("Form data", values);
 
   return (
-    <>
+    <Page>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -224,7 +225,7 @@ function FormExample() {
           </Form>
         )}
       </Formik>
-    </>
+    </Page>
   );
 }
 
