@@ -3,8 +3,6 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FieldControl from '../components/FieldControl/FieldControl'
 import FieldWrapper from '../components/FieldWrapper/FieldWrapper'
-import ImageUpload from '../components/ImageUpload/ImageUpload'
-import FileUpload from '../components/FileUpload/FileUpload'
 import FormButton from '../components/FormButton/FormButton'
 
 function FormExample() {
@@ -166,11 +164,27 @@ function FormExample() {
               helper="Please specify your DOB"
               required />
 
-            <h2 className="mb-4 text-2xl font-bold">Image Upload</h2>
+            <FieldControl
+              control='fileUpload'
+              label='File Upload'
+              name='fileUpload'
+              helper="Please select a file for upload"
+              required />
+
+            <FieldControl
+              control='imageUpload'
+              label='Image Upload'
+              name='imageUpload'
+              helper="Please select a image for upload"
+              required />
+
+            {/* <h2 className="mb-4 text-2xl font-bold">Image Upload</h2>
             <ImageUpload />
 
             <h2 className="mb-4 text-2xl font-bold">File Upload</h2>
             <FileUpload />
+            <h2 className="mb-4 text-2xl font-bold">Input</h2>
+            <FileUpload /> */}
 
             <FormButton />
 

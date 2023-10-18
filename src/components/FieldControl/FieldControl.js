@@ -5,6 +5,8 @@ import Select from '../Select/Select';
 import Radio from '../Radio/Radio';
 import Checkbox from '../Checkbox/Checkbox';
 import DatePicker from '../DatePicker/DatePicker';
+import FileUpload from '../FileUpload/FileUpload';
+import ImageUpload from '../ImageUpload/ImageUpload';
 
 function FieldControl(props) {
   const { control, ...rest } = props;
@@ -22,6 +24,10 @@ function FieldControl(props) {
       return <Checkbox {...rest} />
     case 'date':
       return <DatePicker {...rest} />
+    case 'fileUpload':
+      return <FileUpload {...rest} />
+    case 'imageUpload':
+      return <ImageUpload {...rest} />
     default: return null
   }
 }
