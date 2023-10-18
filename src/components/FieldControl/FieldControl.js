@@ -5,7 +5,7 @@ import Select from "../Select/Select";
 import Radio from "../Radio/Radio";
 import Checkbox from "../Checkbox/Checkbox";
 import DatePicker from "../DatePicker/DatePicker";
-import AutoSuggestSelect from "../AutoSuggestSelect/AutoSuggestSelect";
+import AutoSuggest from "../AutoSuggest/AutoSuggest";
 
 function FieldControl(props) {
   const { control, ...rest } = props;
@@ -23,8 +23,8 @@ function FieldControl(props) {
       return <Checkbox {...rest} />;
     case "date":
       return <DatePicker {...rest} />;
-    case "autoSuggestSelect":
-      return <AutoSuggestSelect {...rest} />;
+    case "autosuggest":
+      return <AutoSuggest {...rest} />;
     default:
       return null;
   }
