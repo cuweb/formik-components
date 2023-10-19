@@ -16,6 +16,7 @@ export const fieldStyles = {
   radioCheck: `flex items-center gap-2`,
   horizontalOptions: `flex flex-row gap-10`,
   verticalOptions: `flex flex-col gap-2`,
+  uploads: `max-w-xs focus:outline-none`,
   errorInput: `border border-red-600 rounded-md p-2`,
 };
 

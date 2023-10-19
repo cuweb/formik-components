@@ -1,6 +1,6 @@
 import { ErrorMessage, useFormik } from 'formik'
 import TextError from '../TextError/TextError'
-import { primaryStyles, textStyles } from '../../styles/styles'
+import { fieldStyles, primaryStyles, textStyles } from '../../styles/styles'
 import { getMaxWidthClass } from '../../helpers/optionClasses'
 import imageUploadValidationSchema from "../../helpers/imageUploadValidationSchema"
 
@@ -8,14 +8,16 @@ function ImageUpload(props) {
   const { label, name, maxWidth, helper, required, ...rest } = props
   const fieldMaxWidth = getMaxWidthClass(maxWidth);
   const requiredClass = required ? primaryStyles.required : ''
+
   const initialValues = {
     file: null,
   };
+  const validationSchema = imageUploadValidationSchema
   const onSubmit = (values) => {
     // You can handle the file here, e.g., upload it to a server
     console.log("Uploaded file:", values.file);
   };
-  const validationSchema = imageUploadValidationSchema
+
   const formik = useFormik({
     initialValues,
     validationSchema,
@@ -31,22 +33,23 @@ function ImageUpload(props) {
       </label>
 
       {helper && <div className={textStyles.helper}>{helper}</div>}
-        <div className="mb-2">
-          <label htmlFor="file">Upload a Image:</label>
-          <input
-            type="file"
-            id="file"
-            name="file"
-            onChange={(event) => {
-              const selectedFile = event.currentTarget.files?.[0]; // Use optional chaining
-              formik.setFieldValue("file", selectedFile);
-            }}
-            onBlur={formik.handleBlur}
-          />
-          {formik.touched.file && formik.errors.file && (
-            <div className="text-red-500">{formik.errors.file}</div>
-          )}
-        </div>
+
+      <input
+        type="file"
+        id="file"
+        name="file"
+        className={fieldStyles.uploads}
+        onChange={(event) => {
+          const selectedFile = event.currentTarget.files?.[0]; // Use optional chaining
+          formik.setFieldValue("file", selectedFile);
+        }}
+        onBlur={formik.handleBlur}
+      />
+
+      {formik.touched.file && formik.errors.file && (
+        <TextError>{formik.errors.file}</TextError>
+      )}
+
       <ErrorMessage name={name} component={TextError} />
     </div>
   )
