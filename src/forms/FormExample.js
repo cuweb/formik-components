@@ -210,7 +210,12 @@ function FormExample() {
               label="Pick a date"
               name="birthDate"
               helper="Please specify your DOB"
+              dateFormat="MMMM d, yyyy"
+              placeholder="MMMM d, yyyy , --:--"
+              customMinDate={new Date(1990, 10, 7)}
+              showTime
               required
+              maxWidth="md"
             />
 
             <button

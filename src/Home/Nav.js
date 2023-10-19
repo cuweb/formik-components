@@ -15,6 +15,7 @@ function Nav() {
     else if (path === "/jobAction") setActivePage("jobAction");
     else if (path === "/employeeApproval") setActivePage("employeeApproval");
     else if (path === "/payrollServices") setActivePage("payrollServices");
+    else if (path === "/researchFinancial") setActivePage("researchFinancial");
   }, [location.pathname]);
 
   return (
@@ -49,10 +50,17 @@ function Nav() {
         </li>
         <li
           className={`mx-2 ${
-            activePage === "employeeApproval" ? "text-red-500" : ""
+            activePage === "payrollServices" ? "text-red-500" : ""
           }`}
         >
           <Link to="/payrollServices">Payroll Services</Link>
+        </li>
+        <li
+          className={`mx-2 ${
+            activePage === "researchFinancial" ? "text-red-500" : ""
+          }`}
+        >
+          <Link to="/researchFinancial">Research Financial</Link>
         </li>
       </ul>
     </nav>

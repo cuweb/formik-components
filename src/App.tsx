@@ -6,6 +6,7 @@ import Nav from "./Home/Nav";
 import JobAction from "./forms/JobAction";
 import EmployeeApproval from "./forms/EmployeeApproval";
 import PayrollServices from "./forms/PayrollServices";
+import ResearchFinancial from "./forms/ResearchFinancial";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/jobAction" element={<JobAction />} />
         <Route path="/employeeApproval" element={<EmployeeApproval />} />
         <Route path="/payrollServices" element={<PayrollServices />} />
+        <Route path="/researchFinancial" element={<ResearchFinancial />} />
       </Routes>
     </Router>
   );
