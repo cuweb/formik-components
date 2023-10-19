@@ -40,6 +40,7 @@ function FormExample() {
     checkboxOption: [],
     birthDate: null,
     autoSuggestCountry: "",
+    wysiwyg:"",
   };
 
   const validationSchema = Yup.object({
@@ -223,6 +224,13 @@ function FormExample() {
               label='Image Upload'
               name='imageUpload'
               helper="Please select a image for upload"
+              required />
+
+            <FieldControl
+              control='wysiwyg'
+              label='WYSIWYG'
+              name='wysiwyg'
+              helper="Text Area with WYSIWYG"
               required />
 
             {/* <h2 className="mb-4 text-2xl font-bold">Image Upload</h2>

@@ -8,6 +8,7 @@ import DatePicker from "../DatePicker/DatePicker";
 import AutoSuggest from "../AutoSuggest/AutoSuggest";
 import FileUpload from '../FileUpload/FileUpload';
 import ImageUpload from '../ImageUpload/ImageUpload';
+import WYSIWYG from "../WYSIWYG/WYSIWYG";
 
 function FieldControl(props) {
   const { control, ...rest } = props;
@@ -31,6 +32,8 @@ function FieldControl(props) {
       return <FileUpload {...rest} />
     case 'imageUpload':
       return <ImageUpload {...rest} />
+    case 'wysiwyg':
+      return <WYSIWYG {...rest} />
     default:
       return null;
   }
