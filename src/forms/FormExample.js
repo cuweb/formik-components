@@ -43,14 +43,14 @@ function FormExample() {
   };
 
   const validationSchema = Yup.object({
-    // firstname: Yup.string().required("Required"),
-    // lastname: Yup.string().required("Required"),
-    // email: Yup.string().required("Required").email("Invalid email address"),
-    // description: Yup.string().required("Required"),
-    // selectOption: Yup.string().required("Required"),
-    // radioOption: Yup.string().required("Required"),
-    // checkboxOption: Yup.array().required("Required"),
-    // birthDate: Yup.date().required("Required").nullable(),
+    // // firstname: Yup.string().required("Required"),
+    // // lastname: Yup.string().required("Required"),
+    // // email: Yup.string().required("Required").email("Invalid email address"),
+    // // description: Yup.string().required("Required"),
+    // // selectOption: Yup.string().required("Required"),
+    // // radioOption: Yup.string().required("Required"),
+    // // checkboxOption: Yup.array().required("Required"),
+    // // birthDate: Yup.date().required("Required").nullable(),
     // autoSuggestCountry: Yup.object()
     //   .shape({
     //     value: Yup.string(),
@@ -209,18 +209,39 @@ function FormExample() {
               label="Pick a date"
               name="birthDate"
               helper="Please specify your DOB"
-              required
-            />
+              required />
+
+            <FieldControl
+              control='fileUpload'
+              label='File Upload'
+              name='fileUpload'
+              helper="Please select a file for upload"
+              required />
+
+            <FieldControl
+              control='imageUpload'
+              label='Image Upload'
+              name='imageUpload'
+              helper="Please select a image for upload"
+              required />
+
+            {/* <h2 className="mb-4 text-2xl font-bold">Image Upload</h2>
+            <ImageUpload />
+
+            <h2 className="mb-4 text-2xl font-bold">File Upload</h2>
+            <FileUpload />
+            <h2 className="mb-4 text-2xl font-bold">Input</h2>
+            <FileUpload /> */}
 
             <FormButton />
 
             {/* <button
-            type="submit"
-            aria-label="Submit"
-            className="inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium text-white rounded-md cu-button not-prose md:px-6 md:py-3 md:text-base hover:text-white focus:outline-none bg-cu-red hover:bg-cu-black-600"
-          >
-            Submit
-          </button> */}
+              type="submit"
+              aria-label="Submit"
+              className="inline-flex items-center justify-center gap-1 px-3 py-2 text-sm font-medium text-white rounded-md cu-button not-prose md:px-6 md:py-3 md:text-base hover:text-white focus:outline-none bg-cu-red hover:bg-cu-black-600"
+            >
+              Submit
+            </button> */}
           </Form>
         )}
       </Formik>
