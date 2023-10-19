@@ -6,6 +6,8 @@ import Radio from "../Radio/Radio";
 import Checkbox from "../Checkbox/Checkbox";
 import DateTimePicker from "../DatePicker/DateTimePicker";
 import AutoSuggest from "../AutoSuggest/AutoSuggest";
+import FileUpload from '../FileUpload/FileUpload';
+import ImageUpload from '../ImageUpload/ImageUpload';
 
 function FieldControl(props) {
   const { control, ...rest } = props;
@@ -25,6 +27,10 @@ function FieldControl(props) {
       return <DateTimePicker {...rest} />;
     case "autosuggest":
       return <AutoSuggest {...rest} />;
+    case 'fileUpload':
+      return <FileUpload {...rest} />
+    case 'imageUpload':
+      return <ImageUpload {...rest} />
     default:
       return null;
   }
