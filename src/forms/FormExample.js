@@ -3,7 +3,6 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FieldControl from "../components/FieldControl/FieldControl";
 import FieldWrapper from "../components/FieldWrapper/FieldWrapper";
-import FormButton from "../components/FormButton/FormButton";
 import Page from "../Home/Page";
 
 function FormExample() {
@@ -212,7 +211,7 @@ function FormExample() {
               helper="Please specify your DOB"
               dateFormat="MMMM d, yyyy"
               placeholder="MMMM d, yyyy , --:--"
-              customMinDate={new Date(1990, 10, 7)}
+              customMinDate={new Date()}
               showTime
               required
               maxWidth="md"

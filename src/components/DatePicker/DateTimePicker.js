@@ -15,7 +15,6 @@ function DateTimePicker(props) {
     showTime,
     dateFormat = "MMMM d, yyyy",
     timeFormat = "HH:mm",
-    timeIntervals = 15,
     placeholder,
     customMinDate,
     maxWidth,
@@ -51,9 +50,8 @@ function DateTimePicker(props) {
         }}
         showTimeSelect={showTime}
         timeFormat={timeFormat}
-        timeIntervals={timeIntervals}
         dateFormat={dateFormat}
-        minDate={customMinDate || new Date()}
+        minDate={customMinDate}
         placeholderText={placeholder}
         className={`${fieldStyles.input} w-full`}
         {...rest}

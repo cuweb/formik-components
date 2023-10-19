@@ -7,6 +7,7 @@ import JobAction from "./forms/JobAction";
 import EmployeeApproval from "./forms/EmployeeApproval";
 import PayrollServices from "./forms/PayrollServices";
 import ResearchFinancial from "./forms/ResearchFinancial";
+import CasualJobs from "./forms/CasualJobs";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobForm" element={<JobForm />} />
+        <Route path="/casualJobs" element={<CasualJobs />} />
         <Route path="/formExample" element={<FormExample />} />
         <Route path="/jobAction" element={<JobAction />} />
         <Route path="/employeeApproval" element={<EmployeeApproval />} />

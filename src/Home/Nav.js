@@ -11,7 +11,7 @@ function Nav() {
     const path = location.pathname;
     if (path === "/") setActivePage("home");
     else if (path === "/formExample") setActivePage("formExample");
-    else if (path === "/jobForm") setActivePage("jobForm");
+    else if (path === "/casualJobs") setActivePage("casualJobs");
     else if (path === "/jobAction") setActivePage("jobAction");
     else if (path === "/employeeApproval") setActivePage("employeeApproval");
     else if (path === "/payrollServices") setActivePage("payrollServices");
@@ -32,9 +32,11 @@ function Nav() {
           <Link to="/formExample">Form Example</Link>
         </li>
         <li
-          className={`mx-2 ${activePage === "jobForm" ? "text-red-500" : ""}`}
+          className={`mx-2 ${
+            activePage === "casualJobs" ? "text-red-500" : ""
+          }`}
         >
-          <Link to="/jobForm">Job Forms</Link>
+          <Link to="/casualJobs">Casual Jobs</Link>
         </li>
         <li
           className={`mx-2 ${activePage === "jobAction" ? "text-red-500" : ""}`}

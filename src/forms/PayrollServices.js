@@ -104,9 +104,15 @@ function PayrollServices() {
                 control="date"
                 label="Start Date"
                 name="startDate"
+                placeholder="MMMM d, yyyy , --:--"
               />
 
-              <FieldControl control="date" label="End Date" name="endDate" />
+              <FieldControl
+                control="date"
+                label="End Date"
+                name="endDate"
+                placeholder="MMMM d, yyyy , --:--"
+              />
             </FieldWrapper>
 
             <button
