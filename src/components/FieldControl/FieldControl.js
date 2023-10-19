@@ -4,7 +4,7 @@ import TextArea from "../TextArea/TextArea";
 import Select from "../Select/Select";
 import Radio from "../Radio/Radio";
 import Checkbox from "../Checkbox/Checkbox";
-import DatePicker from "../DatePicker/DatePicker";
+import DateTimePicker from "../DatePicker/DateTimePicker";
 import AutoSuggest from "../AutoSuggest/AutoSuggest";
 import FileUpload from '../FileUpload/FileUpload';
 import ImageUpload from '../ImageUpload/ImageUpload';
@@ -24,7 +24,7 @@ function FieldControl(props) {
     case "checkbox":
       return <Checkbox {...rest} />;
     case "date":
-      return <DatePicker {...rest} />;
+      return <DateTimePicker {...rest} />;
     case "autosuggest":
       return <AutoSuggest {...rest} />;
     case 'fileUpload':
