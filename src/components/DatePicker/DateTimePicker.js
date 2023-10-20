@@ -53,7 +53,7 @@ function DateTimePicker(props) {
         dateFormat={dateFormat}
         minDate={customMinDate}
         placeholderText={placeholder}
-        className={`${fieldStyles.input} w-full`}
+        className={`${fieldStyles.input} ${fieldStyles.disabled} w-full`}
         {...rest}
       />
 

@@ -2,13 +2,13 @@ export const primaryStyles = {
   wrapper: `flex flex-col gap-2`,
   required: ``,
   // required: `border border-cu-red px-5 py-4 bg-cu-red-25 rounded-md`
-}
+};
 
 export const textStyles = {
   label: `block font-semibold text-lg`,
   helper: `block text-sm text-cu-black-600 mb-1`,
-  required: `text-cu-red`
-}
+  required: `text-cu-red`,
+};
 
 export const fieldStyles = {
   input: `border border-cu-black-200 rounded-md placeholder:text-cu-black-400`,
@@ -18,6 +18,9 @@ export const fieldStyles = {
   verticalOptions: `flex flex-col gap-2`,
   uploads: `max-w-xs focus:outline-none`,
   errorInput: `border border-red-600 rounded-md p-2`,
+  disabled: `disabled:bg-slate-100 disabled:text-slate-500 disabled:border-slate-200 disabled:shadow-none `,
+  disabledCheckbox: `disabled:pointer-events-none disabled:bg-gray-300 disabled:text-black-800 `,
+  disabledUpload: `disabled:pointer-events-none`,
 };
 
 export const fieldErrorStyles = {

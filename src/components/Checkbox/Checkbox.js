@@ -30,8 +30,10 @@ function Checkbox(props) {
                       type="checkbox"
                       id={option.value}
                       {...field}
+                      {...rest}
                       value={option.value}
                       checked={field.value.includes(option.value)}
+                      className={fieldStyles.disabledCheckbox}
                     />
                     <label htmlFor={option.value}>{option.key}</label>
                   </div>
